@@ -23,7 +23,7 @@ namespace DES_Algorithm
         public InitPermutation()
         {
             InitializeComponent();
-            InitPermDataGrid1.ItemsSource = JustSomeGlobalTestingStuff.SomeTestArray;
+            InitPermDataGrid1.DataContext = (new JustSomeGlobalTestingStuff()).SomeTestArray;
         }
     }
 }

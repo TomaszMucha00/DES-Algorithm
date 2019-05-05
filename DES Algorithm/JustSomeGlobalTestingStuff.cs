@@ -9,17 +9,16 @@ namespace DES_Algorithm
 {
     class JustSomeGlobalTestingStuff
     {
-        public static int[] SomeTestArray { get; set; }
+        public List<String> SomeTestArray { get; set; }
 
-        static JustSomeGlobalTestingStuff()
+        public JustSomeGlobalTestingStuff()
         {
-            SomeTestArray = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            string temp = "";
-            foreach (var item in SomeTestArray)
-            {
-                temp += item.ToString();
-            }
-            MessageBox.Show(temp);
+            SomeTestArray = new List<string>();
+            SomeTestArray.Add("2222");
+            SomeTestArray.Add("222332");
+            SomeTestArray.Add("222112");
+            SomeTestArray.Add("222442");
+            //SomeTestArray = new int[] { 1, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         }
     }
 }

@@ -37,9 +37,10 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <DataGrid Name="InitPermDataGrid1" Margin="10" Grid.Row="0" ItemsSource="{Binding SomeTestArray}"></DataGrid>
+                <DataGrid Name="InitPermDataGrid1" Margin="10" Grid.Row="0" DataContext="{Binding Path=SomeTestArray}"></DataGrid>
                 <DataGrid Name="InitPermDataGrid2" Margin="10" Grid.Row="1"></DataGrid>
                 <DataGrid Name="InitPermDataGrid3" Margin="10" Grid.Row="2"></DataGrid>
+                <!-- -->
             </Grid>
         </Grid>
     </Grid>
