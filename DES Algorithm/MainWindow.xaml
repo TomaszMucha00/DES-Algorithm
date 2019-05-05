@@ -5,8 +5,181 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DES_Algorithm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="DES" Height="440" Width="600" MaxHeight="440" MinHeight="440" MaxWidth="600" MinWidth="600">
+
+    <Grid Background="LightGray">
+
+        <DockPanel LastChildFill="True">
+            <Label Content="Algorytm DES" HorizontalContentAlignment="Center" FontSize="25" FontWeight="Bold" DockPanel.Dock="Top" Margin="5,5,5,5"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <DockPanel LastChildFill="True" Margin="5,5,15,5" Grid.Row="0">
+                    <DockPanel LastChildFill="True" Margin="5,5,15,5" Grid.Row="0">
+                        <Label Content="Tekst jawny" DockPanel.Dock="Top" Width="100" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                        <Button x:Name="OpenPlainTextFromFileButton" Margin ="25,2,0,2" FontSize="9" Content="Wczytaj z pliku" FontWeight="Bold" Click="OpenPlainTextFromFileButton_Click"/>
+                    </DockPanel>
+                    <TextBox x:Name="TextBoxPlainText" TextChanged="TextBoxPlainText_TextChanged"/>
+                </DockPanel>
+                <Label x:Name="PlainTextLabel" Grid.Row="1"></Label>
+                <Grid Grid.Row="2" Margin="5,5,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="119"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="RadioButtonPlainTextPlain" Content="Jawnie" Grid.Column="1" FontWeight="Bold" Checked="RadioButtonPlainTextPlain_Checked"/>
+                    <RadioButton x:Name="RadioButtonPlainTextHex" Content="Hex" Grid.Column="2" FontWeight="Bold" Checked="RadioButtonPlainTextHex_Checked"/>
+                    <RadioButton x:Name="RadioButtonPlainTextBin" Content="Bin" Grid.Column="3" FontWeight="Bold" Checked="RadioButtonPlainTextBin_Checked"/>
+                    <CheckBox x:Name="SpecialSequencePlainText" FontSize="9" Grid.Column="4" Margin="10,0,0,0">Sekwencja specialna</CheckBox>
+                </Grid>
+                <DockPanel LastChildFill="True" Margin="5,5,15,5" Grid.Row="3">
+                    <Label Content="Klucz" DockPanel.Dock="Left" Width="100" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxKey" Height="20" Margin="20,0,0,0"/>
+                </DockPanel>
+                <Grid Grid.Row="4" Margin="5,5,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="119"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Jawnie" Grid.Column="1" FontWeight="Bold"/>
+                    <RadioButton Content="Hex" Grid.Column="2" FontWeight="Bold"/>
+                    <RadioButton Content="Bin" Grid.Column="3" FontWeight="Bold"/>
+                    <CheckBox x:Name="SpecialSequenceKey" FontSize="9" Grid.Column="4" Margin="10,0,0,0">Sekwencja specialna</CheckBox>
+                </Grid>
+                <DockPanel LastChildFill="True" Margin="5,5,15,5" Grid.Row="5">
+                    <DockPanel LastChildFill="True" Margin="5,5,15,5" Grid.Row="0">
+                        <Label Content="Szyfr" DockPanel.Dock="Top" Width="100" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                        <Button x:Name="OpenEncriptedTextFromFileButton" Margin ="25,2,0,2" FontSize="9" Content="Wczytaj z pliku" FontWeight="Bold"/>
+                    </DockPanel>
+                    <TextBox x:Name="TextBoxEncriptedText"/>
+                </DockPanel>
+                <Label x:Name="CypherLabel" Grid.Row="6"></Label>
+                <Grid Grid.Row="7" Margin="5,5,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="119"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Jawnie" Grid.Column="1" FontWeight="Bold"/>
+                    <RadioButton Content="Hex" Grid.Column="2" FontWeight="Bold"/>
+                    <RadioButton Content="Bin" Grid.Column="3" FontWeight="Bold"/>
+                    <CheckBox x:Name="SpecialSequenceEncriptedText" Grid.Column="4" FontSize="9" Margin="10,0,0,0">Sekwencja specialna</CheckBox>
+                </Grid>
+                <Grid Grid.Row="8">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="ButtonEncript" Content="Szyfruj" Grid.Column="0" Margin="5,0,10,10" FontSize="10" FontWeight="Bold" Click="ButtonEncript_Click"/>
+                    <Button x:Name="ButtonDecript" Content="Deszyfruj" Grid.Column="1" Margin="5,0,10,10" FontSize="10" FontWeight="Bold" Click="ButtonDecript_Click"/>
+                    <Button x:Name="ButtonFullEncript" Content="S. Opis" Grid.Column="2" Margin="5,0,10,10" FontSize="10" FontWeight="Bold" Click="ButtonFullEncript_Click"/>
+                    <Button x:Name="ButtonFullDecript" Content="Ds. Opis" Grid.Column="3" Margin="5,0,10,10" FontSize="10" FontWeight="Bold"/>
+                </Grid>
+            </Grid>
+        </DockPanel>
+
+        <!--   <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <Label Content="ALGORYTM DES" HorizontalContentAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0,10"/>
+            <Grid Height="70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Tekst jawny" HorizontalContentAlignment="Right" Margin="0,0,5,0" FontWeight="Bold"/>
+                <TextBox Grid.Column="1"/>
+            </Grid>
+            <Grid Height="25" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Height="25" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Jawny" Grid.Column="0"/>
+                    <RadioButton Content="Hex" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+            <Grid Height="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Klucz" HorizontalContentAlignment="Right" Margin="0,0,5,0" FontWeight="Bold"/>
+                <TextBox Grid.Column="1"/>
+            </Grid>
+            <Grid Height="25">
+                            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Height="25" Margin="0,10,0,0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Jawny" Grid.Column="0"/>
+                    <RadioButton Content="Hex" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+            <Grid Height="70" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Tekst szyfrowany" HorizontalContentAlignment="Right" Margin="0,0,0,0" FontWeight="Bold"/>
+                <TextBox Grid.Column="1"/>
+            </Grid>
+            <Grid Height="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Height="25" Margin="0,10,0,0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Jawny" Grid.Column="0"/>
+                    <RadioButton Content="Hex" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Szyfruj" Grid.Column="1" Margin="0,0,5,0"/>
+                <Button Content="Deszyfruj" Grid.Column="2"/>
+            </Grid>
+        </StackPanel> -->
     </Grid>
 </Window>

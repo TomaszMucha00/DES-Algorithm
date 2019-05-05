@@ -1,0 +1,58 @@
+﻿<Page x:Class="DES_Algorithm.DescriptionPages.Keys"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DES_Algorithm.DescriptionPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Keys">
+
+    <Grid Background="Silver">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button x:Name="KeysInitBtn" Grid.Row="0" Height="24" VerticalAlignment="Top" Click="KeysInitBtn_Click">Inicjacja</Button>
+            <Button x:Name="KeysTransformationBtn1" Grid.Row="1"   VerticalContentAlignment="Center">1 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn2" Grid.Row="2"   VerticalContentAlignment="Center" >2 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn3" Grid.Row="3"   VerticalContentAlignment="Center" >3 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn4" Grid.Row="4"   VerticalContentAlignment="Center" >4 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn5" Grid.Row="5"   VerticalContentAlignment="Center" >5 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn6" Grid.Row="6"   VerticalContentAlignment="Center" >6 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn7" Grid.Row="7"   VerticalContentAlignment="Center" >7 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn8" Grid.Row="8"   VerticalContentAlignment="Center" >8 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn9" Grid.Row="9"   VerticalContentAlignment="Center" >9 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn10" Grid.Row="10" VerticalContentAlignment="Center" >10 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn11" Grid.Row="11" VerticalContentAlignment="Center" >11 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn12" Grid.Row="12" VerticalContentAlignment="Center" >12 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn13" Grid.Row="13" VerticalContentAlignment="Center" >13 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn14" Grid.Row="14" VerticalContentAlignment="Center" >14 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn15" Grid.Row="15" VerticalContentAlignment="Center" >15 transformacja</Button>
+            <Button x:Name="KeysTransformationBtn16" Grid.Row="16" VerticalContentAlignment="Center" >16 transformacja</Button>
+            <Button x:Name="KeysTransformationBtnx" Grid.Row="17"  VerticalContentAlignment="Center" ></Button>
+        </Grid>
+        <Frame x:Name="KeysFrame" Grid.Column="1" Margin="10" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Page>
